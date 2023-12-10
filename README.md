@@ -1,16 +1,3 @@
-# flutter_laboratory_2
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![flutter-1](https://github.com/KromSanya/flutter_laboratory/assets/135069778/2d515e1e-3636-45ea-ad13-098ab8abd756)
+![flutter-2](https://github.com/KromSanya/flutter_laboratory/assets/135069778/ffa5bd65-2719-4cee-a3aa-3fb44123e5ff)
