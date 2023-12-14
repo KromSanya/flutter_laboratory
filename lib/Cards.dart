@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'main.dart';
+
 
 class ScrollableCardsRow extends StatelessWidget {
+  const ScrollableCardsRow({super.key});
+
   @override
   Widget build(BuildContext context) {
     return const SingleChildScrollView(
@@ -65,8 +67,8 @@ class CardItem extends StatelessWidget {
             ),
             Container(
               alignment: Alignment.centerLeft,
-              padding: const EdgeInsets.only(top: 8, left: 16.0),
-              child: Text(text1, style: const TextStyle(fontFamily: 'SFProText', fontWeight: FontWeight.bold),),
+              padding: const EdgeInsets.only(top: 4, left: 16.0),
+              child: Text(text1, style: const TextStyle(fontSize: 14,fontFamily: 'SFProText', fontWeight: FontWeight.bold),),
             ),
             Container(
               alignment: Alignment.centerLeft,
