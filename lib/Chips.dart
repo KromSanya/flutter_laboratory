@@ -29,9 +29,16 @@ class Chips extends StatelessWidget {
   }
 }
 
-class ChipItem extends StatelessWidget {
+class ChipItem extends StatefulWidget {
   const ChipItem({Key? key, required this.text}) : super(key: key);
   final String text;
+
+  @override
+  _ChipItemState createState() => _ChipItemState();
+}
+
+class _ChipItemState extends State<ChipItem> {
+  bool isSelected = false;
 
   @override
   Widget build(BuildContext context) {
@@ -41,15 +48,24 @@ class ChipItem extends StatelessWidget {
         type: MaterialType.transparency,
         child: InkWell(
           onTap: () {
-            // Ваш обработчик нажатия здесь
+            setState(() {
+              isSelected = !isSelected;
+            });
           },
           child: Chip(
-            backgroundColor: const Color(0x14000000),
+            backgroundColor: isSelected ? Colors.blue : const Color(0x14000000),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.0),
               side: const BorderSide(color: Colors.transparent),
             ),
-            label: Text(text, style: const TextStyle(fontFamily: 'SFProText', fontWeight: FontWeight.bold)),
+            label: Text(
+              widget.text,
+              style: TextStyle(
+                fontFamily: 'SFProText',
+                fontWeight: FontWeight.bold,
+                color: isSelected ? Colors.white : null,
+              ),
+            ),
           ),
         ),
       ),
