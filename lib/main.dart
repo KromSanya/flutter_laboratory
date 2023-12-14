@@ -25,25 +25,36 @@ class CombinedWidget extends StatelessWidget {
                   padding: EdgeInsets.only(
                     top: MediaQuery.of(context).padding.top + 14.0,
                   ),
-                  child: const Column(
+                  child: Column(
                     children: [
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 20.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Image(
-                              image: AssetImage('assets/cross.png'),
+                            IconButton(
+                              onPressed: () {
+                              },
+                              icon: const ImageIcon(
+                                AssetImage('assets/cross.png'),
+                                color: Colors.green,
+                              ),
                               alignment: Alignment.topLeft,
                             ),
-                            Image(
-                              image: AssetImage('assets/ext.png'),
+
+                            IconButton(
+                              onPressed: () {
+                              },
+                              icon: const ImageIcon(
+                                AssetImage('assets/ext.png'),
+                                color: Colors.green,
+                              ),
                               alignment: Alignment.topRight,
                             ),
                           ],
                         ),
                       ),
-                      Column(
+                      const Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image(
@@ -60,7 +71,7 @@ class CombinedWidget extends StatelessWidget {
                           ),
                         ],
                       ),
-                      TabBar(
+                      const TabBar(
                         tabs: [
                           Tab(text: 'Профиль'),
                           Tab(text: 'Настройки'),
@@ -83,102 +94,6 @@ class CombinedWidget extends StatelessWidget {
     );
   }
 }
-
-/*
-class CombinedWidget extends StatelessWidget {
-  const CombinedWidget({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(primaryColor: Colors.green),
-      home: const DefaultTabController(
-        length: 2,
-        child: Scaffold(
-          body: Stack(
-            children: [
-              Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Image(
-                          image: AssetImage('assets/cross.png'),
-                          alignment: Alignment.topLeft,
-                        ),
-                        Image(
-                          image: AssetImage('assets/ext.png'),
-                          alignment: Alignment.topRight,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image(
-                        image: AssetImage('assets/Photo.png'),
-                        alignment: Alignment.topCenter,
-                      ),
-                      Text(
-                        'Екатерина',
-                        style: TextStyle(
-                          fontSize: 24,
-                        ),
-                      ),
-                    ],
-                  ),
-                  TabBar(
-                    tabs: [
-                      Tab(text: 'Профиль'),
-                      Tab(text: 'Настройки'),
-                    ],
-                  ),
-                  Expanded(
-                    child: TabBarView(
-                      children: [Profile(), Settings()],
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
- */
-
-// class TabBarDemo extends StatelessWidget {
-//   const TabBarDemo({Key? key});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return const DefaultTabController(
-//       length: 2,
-//       child: Column(
-//         children: [
-//           TabBar(
-//             tabs: [
-//               Tab(text: 'Профиль'),
-//               Tab(text: 'Настройки'),
-//             ],
-//           ),
-//           TabBarView(
-//               children: [
-//                 Profile(),
-//                 Settings()
-//               ],
-//             ),
-//
-//         ],
-//       ),
-//     );
-//   }
-// }
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
