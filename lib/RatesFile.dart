@@ -39,17 +39,21 @@ class RatesBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Image.asset(imagepath),
+        Image.asset(imagepath, alignment: Alignment.topLeft,),
         const Padding(padding: EdgeInsets.only(left: 8)),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Container(
+              width: 263,
+              child:
               Text(
                 text1,
                 textAlign: TextAlign.left,
                 style: const TextStyle(fontSize: 16, fontFamily: 'SFProText', fontWeight: FontWeight.bold),
                 softWrap: true,
-              ),
+              )
+            ),
               Text(text2,
                   textAlign: TextAlign.left,
                   style: const TextStyle(color: Color(0x8C000000), fontFamily: 'SFProText', fontWeight: FontWeight.normal),
