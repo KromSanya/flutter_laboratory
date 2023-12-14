@@ -73,6 +73,7 @@ class CombinedWidget extends StatelessWidget {
                         ],
                       ),
                       TabBar(
+                          indicatorColor: Colors.green,
                         tabs: [
                           Tab(text: StringAssets.profile),
                           Tab(text: StringAssets.settings),
@@ -81,9 +82,9 @@ class CombinedWidget extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
+                SizedBox(
                   height: MediaQuery.of(context).size.height - kToolbarHeight,
-                  child: TabBarView(
+                  child: const TabBarView(
                     children: [Profile(), Settings()],
                   ),
                 ),
