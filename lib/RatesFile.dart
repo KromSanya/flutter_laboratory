@@ -1,28 +1,29 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_laboratory_2/TextMaster.dart';
+import 'Fonts.dart';
 class Rates extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-    Text('Тарифы и лимиты', style: TextStyle(fontSize: 24, fontFamily: 'SFProText', fontWeight: FontWeight.bold)),
-    Text('Для операций в Сбербанк Онлайн',
-        style: TextStyle(color: Color(0x8C000000), fontFamily: 'SFProText', fontWeight: FontWeight.normal)
+    Text(StringAssets.limitsAndSubscriptionsTitle, style: TextStyle(fontSize: FontAssets.largeFontSize24 , fontFamily: FontAssets.sfProFam, fontWeight: FontWeight.bold)),
+    Text(StringAssets.onlySberTitle,
+        style: TextStyle(color: Color(0x8C000000), fontFamily: FontAssets.sfProFam, fontWeight: FontWeight.normal)
         ),
-    Padding(padding: EdgeInsets.symmetric(vertical: 12)),
+    Padding(padding: EdgeInsets.symmetric(vertical: 8)),
     RatesBuilder(
-        text1: 'Изменить суточный лимит',
-        text2: 'На платежи и переводы',
+        text1: StringAssets.changeLimitTitle,
+        text2: StringAssets.transactionsAndFeeTitle,
         imagepath: 'assets/speedometer.png'),
     Divider(),
     RatesBuilder(
-        text1: 'Переводы без комиссии',
-        text2: 'Показать остаток в этим месяце',
+        text1: StringAssets.transactionsWithoutExtraTitle,
+        text2: StringAssets.showBalanceTitle,
         imagepath: 'assets/Icon.png'),
     Divider(),
     RatesBuilder(
-        text1: 'Информация о тарифах и лимитах',
+        text1: StringAssets.limitInformationTitle,
         text2: '',
         imagepath: 'assets/arrows_forward.png')
           ],
@@ -50,13 +51,13 @@ class RatesBuilder extends StatelessWidget {
               Text(
                 text1,
                 textAlign: TextAlign.left,
-                style: const TextStyle(fontSize: 16, fontFamily: 'SFProText', fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 16, fontFamily: FontAssets.sfProFam, fontWeight: FontWeight.bold),
                 softWrap: true,
               )
             ),
               Text(text2,
                   textAlign: TextAlign.left,
-                  style: const TextStyle(color: Color(0x8C000000), fontFamily: 'SFProText', fontWeight: FontWeight.normal),
+                  style: TextStyle(color: Color(0x8C000000), fontFamily: FontAssets.sfProFam, fontWeight: FontWeight.normal),
                 softWrap: true,
               )
           ],

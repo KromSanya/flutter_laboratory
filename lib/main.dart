@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_laboratory_2/Fonts.dart';
 import 'Cards.dart';
 import 'RatesFile.dart';
 import 'Chips.dart';
-
+import 'TextMaster.dart';
 void main() {
   //runApp(MyApp());
   runApp(const CombinedWidget());
@@ -54,7 +55,7 @@ class CombinedWidget extends StatelessWidget {
                           ],
                         ),
                       ),
-                      const Column(
+                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image(
@@ -62,19 +63,19 @@ class CombinedWidget extends StatelessWidget {
                             alignment: Alignment.topCenter,
                           ),
                           Text(
-                            'Екатерина',
+                            StringAssets.userName,
                             style: TextStyle(
-                              fontSize: 24,
-                              fontFamily: 'SFProText',
+                              fontSize: FontAssets.largeFontSize24,
+                              fontFamily: FontAssets.sfProFam,
                               fontWeight: FontWeight.bold
                             ),
                           ),
                         ],
                       ),
-                      const TabBar(
+                      TabBar(
                         tabs: [
-                          Tab(text: 'Профиль'),
-                          Tab(text: 'Настройки'),
+                          Tab(text: StringAssets.profile),
+                          Tab(text: StringAssets.settings),
                         ],
                       ),
                     ],
@@ -106,12 +107,12 @@ class Profile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Padding(padding: EdgeInsets.only(top: 14)),
-          const Text('У вас подключено', style: TextStyle(fontSize: 24, fontFamily: 'SFProText', fontWeight: FontWeight.bold)),
-          const Text('Подписки, автоплатежи и сервисы, на которые вы подписались',
-               style: TextStyle( color: Color(0x8C000000), fontFamily: 'SFProText', fontWeight: FontWeight.normal)),
-          const Padding(padding: EdgeInsets.only(bottom: 12)),
+           Text(StringAssets.subscriptionTitle, style: TextStyle(fontSize: 24, fontFamily: FontAssets.sfProFam, fontWeight: FontWeight.bold)),
+           Text(StringAssets.subscriptionsTitle,
+               style: TextStyle( color: Color(0x8C000000), fontFamily: FontAssets.sfProFam, fontWeight: FontWeight.normal)),
+          const Padding(padding: EdgeInsets.only(bottom: 8)),
           ScrollableCardsRow(),
-          const Padding(padding: EdgeInsets.only(bottom: 12)),
+          const Padding(padding: EdgeInsets.only(bottom: 8)),
           Rates(),
           const Chips()
         ],

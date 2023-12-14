@@ -1,26 +1,27 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_laboratory_2/TextMaster.dart';
+import 'Fonts.dart';
 
 class ScrollableCardsRow extends StatelessWidget {
   const ScrollableCardsRow({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
+    return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
           CardItem(
             imagePath: 'assets/sberprime.png',
-            text: 'СберПрайм',
-            text1: 'Платёж 9 июля',
-            text2: '199 ₽ в месяц',
+            text: StringAssets.sberPrimeTitle,
+            text1: StringAssets.feeTitle,
+            text2: StringAssets.feeSumTitle,
           ),
           CardItem(
             imagePath: 'assets/percent_fill.png',
-            text: 'Переводы',
-            text1: 'Автопродление 21 августа',
-            text2: '199 ₽ в месяц',
+            text: StringAssets.transactionsTitle,
+            text1: StringAssets.autoSubscriptionTitle,
+            text2: StringAssets.feeSumTitle,
           ),
         ],
       ),
@@ -44,7 +45,7 @@ class CardItem extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(right: 8.0),
       width: 216.0,
-      height: 130,
+      height: 140,
       child: Card(
         child: Column(
           children: [
@@ -60,7 +61,7 @@ class CardItem extends StatelessWidget {
                   padding: const EdgeInsets.all(16.0),
                   child: Text(
                     text,
-                    style: const TextStyle(fontSize: 16.0, fontFamily: 'SFProText', fontWeight: FontWeight.bold),
+                    style:  TextStyle(fontSize: FontAssets.bigFontSize16, fontFamily: FontAssets.sfProFam, fontWeight: FontWeight.bold),
                   ),
                 ),
               ],
@@ -68,14 +69,14 @@ class CardItem extends StatelessWidget {
             Container(
               alignment: Alignment.centerLeft,
               padding: const EdgeInsets.only(top: 4, left: 16.0),
-              child: Text(text1, style: const TextStyle(fontSize: 14,fontFamily: 'SFProText', fontWeight: FontWeight.bold),),
+              child: Text(text1, style:  TextStyle(fontSize: FontAssets.bigFontSize16,fontFamily: FontAssets.sfProFam, fontWeight: FontWeight.bold),),
             ),
             Container(
               alignment: Alignment.centerLeft,
               padding: const EdgeInsets.only(left: 16.0),
               child: Text(
                   text2,
-                style: const TextStyle(fontSize: 16.0, fontFamily: 'SFProText', fontWeight: FontWeight.normal, color: Color(0x8C000000)),
+                style: TextStyle(fontSize: FontAssets.bigFontSize16, fontFamily: FontAssets.sfProFam, fontWeight: FontWeight.normal, color: Color(0x8C000000)),
               ),
             ),
           ],

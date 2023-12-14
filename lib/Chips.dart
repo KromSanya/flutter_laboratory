@@ -1,27 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_laboratory_2/TextMaster.dart';
+
+import 'Fonts.dart';
 
 class Chips extends StatelessWidget {
   const Chips({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(padding: EdgeInsets.symmetric(vertical: 12)),
-        Text('Интересы', style: TextStyle(fontSize: 24, fontFamily: 'SFProText', fontWeight: FontWeight.bold)),
+        Text(StringAssets.interestTitle, style: TextStyle(fontSize: FontAssets.largeFontSize24, fontFamily: FontAssets.sfProFam, fontWeight: FontWeight.bold)),
         Text(
-            'Мы подбираем истории и предложения по темам, которые вам нравятся',
-            style: TextStyle( color: Color(0x8C000000), fontFamily: 'SFProText', fontWeight: FontWeight.normal)),
+            StringAssets.historyCaption,
+            style: TextStyle( color: Color(0x8C000000), fontFamily: FontAssets.sfProFam, fontWeight: FontWeight.normal)),
         Wrap(
           children: [
-            ChipItem(text: 'Еда'),
-            ChipItem(text: 'Саморазвитие'),
-            ChipItem(text: 'Технологии'),
-            ChipItem(text: 'дом'),
-            ChipItem(text: 'Досуг'),
-            ChipItem(text: 'Забота о себе'),
-            ChipItem(text: 'Наука')
+            ChipItem(text: StringAssets.food),
+            ChipItem(text: StringAssets.learn),
+            ChipItem(text: StringAssets.techChip),
+            ChipItem(text: StringAssets.homeChip),
+            ChipItem(text: StringAssets.entertainmentChip),
+            ChipItem(text: StringAssets.selfCareChip),
+            ChipItem(text: StringAssets.scienceChip)
           ],
         ),
       ],
@@ -61,7 +63,7 @@ class _ChipItemState extends State<ChipItem> {
             label: Text(
               widget.text,
               style: TextStyle(
-                fontFamily: 'SFProText',
+                fontFamily: FontAssets.sfProFam,
                 fontWeight: FontWeight.bold,
                 color: isSelected ? Colors.white : null,
               ),
